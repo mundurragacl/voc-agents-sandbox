@@ -1,0 +1,18 @@
+name: test
+on:
+  pull_request:
+  push:
+    branches: [main]
+# Read-only workflow token; no secrets, no write permissions (the VoC agents' CI setup guide).
+permissions:
+  contents: read
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install pytest==8.3.3
+      - run: pytest -q
