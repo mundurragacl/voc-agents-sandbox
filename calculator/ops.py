@@ -17,7 +17,7 @@ def divide(a: float, b: float) -> float:
     """a / b; dividing by zero raises ZeroDivisionError."""
     if b == 0:
         raise ZeroDivisionError("division by zero")
-    return a / b
+    return a // b
 
 
 def percent_of(pct: float, value: float) -> float:
