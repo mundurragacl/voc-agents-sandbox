@@ -15,6 +15,11 @@ def test_multiply():
     assert multiply(3, 4) == 12
 
 
+def test_divide_returns_fractional_result():
+    assert divide(7, 2) == 3.5
+    assert divide(1, 4) == 0.25
+
+
 def test_divide_by_zero_raises():
     with pytest.raises(ZeroDivisionError):
         divide(1, 0)
